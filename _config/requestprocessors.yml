@@ -1,0 +1,11 @@
+---
+Name: wedevelop_maintenance_mode-middleware
+After:
+  - 'requestprocessors'
+  - 'coresecurity'
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Control\Director:
+    properties:
+      Middlewares:
+        MaintenanceMode: '%$WeDevelop\MaintenanceMode\MaintenanceModeMiddleware'

@@ -1,0 +1,10 @@
+---
+Name: silverstripe_maintenance_mode-grid-legacy
+Only:
+  moduleexists:
+    - 'thewebmen/silverstripe-elemental-grid'
+---
+
+SilverStripe\ErrorPage\ErrorPage:
+  extensions:
+    - TheWebmen\ElementalGrid\Extensions\ElementalPageExtension

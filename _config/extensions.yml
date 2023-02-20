@@ -1,0 +1,10 @@
+---
+Name: wedevelop_maintenance_mode-extensions
+---
+SilverStripe\ErrorPage\ErrorPage:
+  extensions:
+    - WeDevelop\MaintenanceMode\ErrorPageExtension
+
+Silverstripe\SiteConfig\SiteConfig:
+  extensions:
+    - WeDevelop\MaintenanceMode\SiteConfigExtension

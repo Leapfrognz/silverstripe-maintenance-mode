@@ -1,0 +1,21 @@
+---
+Name: silverstripe_maintenance_mode-grid
+Only:
+  moduleexists:
+    - 'dnadesign/silverstripe-elemental'
+---
+
+SilverStripe\ErrorPage\ErrorPage:
+  extensions:
+    - DNADesign\Elemental\Extensions\ElementalPageExtension
+
+---
+Name: silverstripe_maintenance_mode-elemental-grid
+Only:
+  moduleexists:
+    - 'wedevelopnl/silverstripe-elemental-grid'
+---
+
+SilverStripe\ErrorPage\ErrorPage:
+  extensions:
+    - WeDevelop\ElementalGrid\Extensions\ElementalPageExtension
