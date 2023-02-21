@@ -16,7 +16,7 @@ use SilverStripe\ErrorPage\ErrorPageController;
 
 final class MaintenanceModeMiddleware implements HTTPMiddleware
 {
-    public function process(HTTPRequest $request, callable $delegate): ?HTTPResponse
+    public function process(HTTPRequest $request, callable $delegate): HTTPResponse
     {
         if (!$this->displayMaintenancePage($request)) {
             return $delegate($request);
