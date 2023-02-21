@@ -8,9 +8,6 @@ use SilverStripe\ORM\DataExtension;
 use SilverStripe\Security\Permission;
 use SilverStripe\Security\PermissionProvider;
 
-/**
- * @property bool $MaintenanceModeEnabled
- */
 class ErrorPageExtension extends DataExtension implements PermissionProvider
 {
     /**
