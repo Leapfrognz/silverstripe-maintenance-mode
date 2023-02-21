@@ -1,6 +1,7 @@
-# Silverstripe Maintenance Page
-Allows the website to be placed in maintenance mode. Blocking access to the website accept for
-authenticated users with the proper permissions.
+# Silverstripe Maintenance Mode
+Adds the ability to put a Silverstripe website in maintenance mode. While in maintenance mode a generic maintenance
+page will be displayed for all regular visitors. Site administrators can still access the CMS and navigate the website
+as usual.
 
 ## Requirements
 * See `composer.json` requirements
