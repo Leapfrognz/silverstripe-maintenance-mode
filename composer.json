@@ -35,9 +35,9 @@
         "allow-plugins": {
             "composer/installers": false,
             "silverstripe/vendor-plugin": false
-        },
-        "suggest": {
-            "wedevelopnl/silverstripe-elemental-grid": "Enhances the error pages by enabeling a grid on them."
         }
+    },
+    "suggest": {
+        "wedevelopnl/silverstripe-elemental-grid": "Enhances the error pages by enabeling a grid on them."
     }
 }
