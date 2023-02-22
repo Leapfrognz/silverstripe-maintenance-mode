@@ -21,7 +21,7 @@
     "require": {
         "php": ">=7.4",
         "silverstripe/framework": "^4@stable",
-        "silverstripe/errorpage": "~1.11.0@stable"
+        "silverstripe/errorpage": "^1.11@stable"
     },
     "autoload": {
         "psr-4": {
