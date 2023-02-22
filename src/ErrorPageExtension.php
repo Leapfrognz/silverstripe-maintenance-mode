@@ -11,7 +11,7 @@ use SilverStripe\Security\PermissionProvider;
 class ErrorPageExtension extends DataExtension implements PermissionProvider
 {
     /**
-     * @var array<int, array{ErrorCode: int, Title: string, Content: string}> $data
+     * @param array<int, array{ErrorCode: int, Title: string, Content: string}> $data
      */
     public function getDefaultRecords(array &$data): void
     {
@@ -25,6 +25,9 @@ class ErrorPageExtension extends DataExtension implements PermissionProvider
         ];
     }
 
+    /**
+     * @return array<string, array{name: string, category: string, help: string}>
+     */
     public function providePermissions(): array
     {
         return [

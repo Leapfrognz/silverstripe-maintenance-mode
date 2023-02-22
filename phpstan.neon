@@ -1,0 +1,12 @@
+parameters:
+    level: 9
+    reportUnmatchedIgnoredErrors: true
+    paths:
+        - src
+    bootstrapFiles:
+        - vendor/syntro/silverstripe-phpstan/bootstrap.php
+    stubFiles:
+        - dev/phpstan/Page.stub
+
+includes:
+    - vendor/syntro/silverstripe-phpstan/phpstan.neon

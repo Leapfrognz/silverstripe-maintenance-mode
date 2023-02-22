@@ -28,11 +28,12 @@ final class MaintenanceModeMiddleware implements HTTPMiddleware
 
         $response = ErrorPage::response_for(503);
 
-        $retryAfter = 600;
-        $maintenanceModeUntil = SiteConfig::current_site_config()->MaintenanceModeUntil ?? '';
-        if (!empty($maintenanceModeUntil)) {
+        $retryAfter = '600';
+        $maintenanceModeUntil = strval((SiteConfig::current_site_config()->MaintenanceModeUntil ?? ''));
+        $maintenanceModeUntilTime = strtotime($maintenanceModeUntil);
+        if (!empty($maintenanceModeUntilTime)) {
             // Format the date according to the spec https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Date
-            $retryAfter = gmdate('D, d M Y H:i:s', strtotime($maintenanceModeUntil)) . ' GMT';
+            $retryAfter = gmdate('D, d M Y H:i:s', $maintenanceModeUntilTime) . ' GMT';
         }
         $response->addHeader('Retry-After', $retryAfter);
         return $response;
@@ -44,7 +45,7 @@ final class MaintenanceModeMiddleware implements HTTPMiddleware
             return false;
         }
 
-        $maintenanceModeEnabled = (bool)SiteConfig::current_site_config()->MaintenanceModeEnabled ?? false;
+        $maintenanceModeEnabled = (bool)(SiteConfig::current_site_config()->MaintenanceModeEnabled ?? false);
         if (!$maintenanceModeEnabled) {
             return false;
         }

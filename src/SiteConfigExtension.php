@@ -32,13 +32,11 @@ class SiteConfigExtension extends DataExtension
         'MaintenanceModeEnabled' => false,
     ];
 
-    public function updateCMSFields(FieldList $fields)
+    public function updateCMSFields(FieldList $fields): void
     {
         $fields->addFieldsToTab('Root.MaintenanceMode', [
             CheckboxField::create('MaintenanceModeEnabled', _t(static::class . '.MAINTENANCE_MODE_ENABLE', 'Enable maintenance mode')),
             DatetimeField::create('MaintenanceModeUntil', _t(static::class . '.MAINTENANCE_MODE_UNTIL', 'Expected end time of maintenance')),
         ]);
-
-        return $fields;
     }
 }
