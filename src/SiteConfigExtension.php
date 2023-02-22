@@ -15,10 +15,21 @@ use SilverStripe\Forms\DatetimeField;
  */
 class SiteConfigExtension extends DataExtension
 {
-    /** @config */
+    /**
+     * @var array<string, string>
+     * @config
+     */
     private static array $db = [
         'MaintenanceModeEnabled' => 'Boolean',
         'MaintenanceModeUntil' => 'Datetime',
+    ];
+
+    /**
+     * @var array<string, mixed>
+     * @config
+     */
+    private static array $defaults = [
+        'MaintenanceModeEnabled' => false,
     ];
 
     public function updateCMSFields(FieldList $fields)
